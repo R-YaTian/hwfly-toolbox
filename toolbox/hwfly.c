@@ -398,7 +398,7 @@ void hwfly_update_fw()
 		new_version = *(uint32_t *)(firmware + 0x150);
 
 		// check if update is newer or forced and <= 128KB
-		if ((!force_update && (new_version <= current_version)) || size > 0x20000)
+		if ((!force_update && (new_version < current_version)) || size > 0x20000)
 		{
 			if (size > 0x20000)
 			{
